@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dyeh8ypmajm4o"]
+
+[node name="BaseCar" type="Node3D"]
