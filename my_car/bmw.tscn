@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfw6djmau0dwi"]
+
+[ext_resource type="PackedScene" uid="uid://mc3q850f88kh" path="res://my_car/bmw.blend" id="1_ieas5"]
+
+[node name="bmw" instance=ExtResource("1_ieas5")]

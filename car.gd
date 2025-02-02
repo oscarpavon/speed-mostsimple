@@ -13,8 +13,8 @@ var turn_input = 0
 @onready var car_mesh = $CarMesh
 @onready var body_mesh = $CarMesh/suv2
 @onready var ground_ray = $CarMesh/RayCast3D
-@onready var right_wheel = $CarMesh/suv2/wheel_frontRight
-@onready var left_wheel = $CarMesh/suv2/wheel_frontLeft
+@onready var right_wheel = $CarMesh/bmw/wheel_front_right
+@onready var left_wheel = $CarMesh/bmw/wheel_front_left
 
 #func _ready():
 #	ground_ray.add_exception(self)

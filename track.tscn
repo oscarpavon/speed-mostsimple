@@ -58,6 +58,8 @@ transform = Transform3D(0.0025831, 0, 0.999997, 0, 1, 0, -0.999997, 0, 0.0025831
 visible = false
 
 [node name="Camera3D" type="Camera3D" parent="." index="4" node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11243, -0.771971, 8.74303)
+visible = false
 script = ExtResource("3_r0uie")
 offset = Vector3(2.08165e-12, 3, 4)
 target = NodePath("../Car/CarMesh")
@@ -85,5 +87,6 @@ shape = SubResource("BoxShape3D_vr403")
 
 [editable path="Car"]
 [editable path="Car/CarMesh"]
+[editable path="Car/CarMesh/bmw"]
 [editable path="road"]
 [editable path="road/road"]
