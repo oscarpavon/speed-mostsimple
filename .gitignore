@@ -1,0 +1,57 @@
+# Godot 4+ specific ignores
+.godot/
+
+# Godot-specific ignores
+.import/
+export.cfg
+export_presets.cfg
+*.import
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Mono-specific ignores
+data_*/
+mono_crash.*.json
+mono/
+.mono/
+*.mono-debugger.sln
+*.csproj
+*.sln
+*.csproj.user
+*.pidb
+*.suo
+*.userprefs
+*.godot/*.mono
+
+# Exported binaries and builds
+/bin/
+*.exe
+*.app
+*.x86_64
+*.wasm
+*.pck
+*.apk
+*.ipa
+
+# Cache and temporary files
+*.cfg
+*.gen.cpp
+*.gen.h
+*.log
+*.log.*
+*.mono
+
+# Godot editor and project settings (not essential for version control)
+.editor_settings-*.tres
+.config/*
+
+# MacOS-specific files
+.DS_Store
+
+# Linux-specific files
+*.so
+
+# Windows-specific files
+Thumbs.db
+*.dll
