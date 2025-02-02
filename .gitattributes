@@ -3,4 +3,4 @@
 *.blend1 filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
 *.jpg filter=lfs diff=lfs merge=lfs -text
-\!speed_image.png
+speed_image.png !filter !diff text
