@@ -10,13 +10,13 @@ config_version=5
 
 [application]
 
-config/name="3d_car_sphere"
-run/main_scene="res://track.tscn"
+config/name="speed_mostsimple"
+run/main_scene="res://assets/Scenes/track.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
 
 [display]
 
+window/stretch/mode="canvas_items"
 window/dpi/allow_hidpi=false
 
 [input]
@@ -45,3 +45,10 @@ steer_left={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":-1.0,"script":null)
 ]
 }
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=2
+textures/default_filters/anisotropic_filtering_level=4
+anti_aliasing/quality/msaa_3d=2
+anti_aliasing/quality/screen_space_aa=1
