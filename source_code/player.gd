@@ -1,14 +1,14 @@
 extends VehicleBody3D
 
 const MAX_STEER = 0.8
-const ENGINE_POWER = 300
+@export var engine_power = 300
+
 var velocity_kmh
 var sound_db
 @export var can_play = false
 @export var hub : Control
 @export var player = false
 @export var camera : Camera3D
-
 
 func _ready():
 	if player == true:
@@ -24,7 +24,7 @@ func _process(delta):
 	
 func play(delta):
 	steering = move_toward(steering,Input.get_axis("steer_right", "steer_left") * MAX_STEER,  delta * 2.5)
-	engine_force = Input.get_axis("brake", "accelerate") * ENGINE_POWER
+	engine_force = Input.get_axis("brake", "accelerate") * engine_power 
 	velocity_kmh = self.linear_velocity.length()
 	hub.kmh_value = velocity_kmh * 5
 	

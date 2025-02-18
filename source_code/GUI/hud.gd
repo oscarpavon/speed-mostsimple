@@ -9,7 +9,6 @@ func _ready():
 	can_update_counter = true
 	$Timer.start()
 
-
 func _process(delta):
 	if can_update_counter == true:
 		var new_second = int($Timer.time_left)
