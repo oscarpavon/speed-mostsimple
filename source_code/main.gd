@@ -15,9 +15,14 @@ func load_and_play():
 	var lambo = track1_instace.get_node("lambo1")
 	hud.player = lambo
 	lambo.player = true
-	var camera = track1_instace.get_node("Camera3D")
+
+	var new_camera = Camera3D.new()
+	var camera_script = load("res://source_code/Camera3D.gd")
+	new_camera.set_script(camera_script)
+
+	#var camera = track1_instace.get_node("Camera3D")
 	var camera_view = lambo.get_node("camera_view")
-	camera.target = camera_view
-
-
-
+	new_camera.current = true
+	new_camera.target = camera_view
+	new_camera.offset = Vector3(0,6,3)
+	add_child(new_camera)
