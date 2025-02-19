@@ -3,6 +3,7 @@ extends Node
 var track1
 var level : Node3D
 var player : VehicleBody3D
+
 func _ready():
 	#get_tree().change_scene_to_file("res://assets/GUI/menu.tscn")
 	#get_tree().change_scene_to_file("res://assets/Scenes/track.tscn")
@@ -13,7 +14,7 @@ func load_and_play():
 	track1 = load("res://assets/Scenes/track.tscn")
 	level = track1.instantiate()
 	add_child(level)
-	player = level.get_node("lambo1")
+	add_player()
 	player.player = true
 	add_hud()
 
@@ -27,6 +28,16 @@ func load_and_play():
 	new_camera.target = camera_view
 	new_camera.offset = Vector3(0,6,3)
 	add_child(new_camera)
+
+
+func add_player():
+	var lambo_asset = load("res://assets/cars/lambo1.tscn")
+	var player_script = load("res://source_code/player.gd")
+	player = lambo_asset.instantiate()
+	player.set_script(player_script)
+	level.add_child(player)
+	var player_start : Node3D = level.get_node("player_start")
+	player.transform = player_start.transform
 
 func add_hud():
 	var canvas = CanvasLayer.new()
