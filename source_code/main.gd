@@ -1,18 +1,24 @@
 extends Node
 
-var track1
 var level : Node3D
 var player : VehicleBody3D
 
+
+#cars
+var lambo_asset = "res://assets/cars/lambo1.tscn"
+var nissan_asset = "res://assets/cars/nissan_gtr.tscn"
+
+#tacks
+var track1_asset = "res://assets/Scenes/track.tscn" 
+
 func _ready():
 	#get_tree().change_scene_to_file("res://assets/GUI/menu.tscn")
-	#get_tree().change_scene_to_file("res://assets/Scenes/track.tscn")
 	load_and_play()
 
 
 func load_and_play():
-	track1 = load("res://assets/Scenes/track.tscn")
-	level = track1.instantiate()
+	var track = load(track1_asset)
+	level = track.instantiate()
 	add_child(level)
 	add_player()
 	player.player = true
@@ -31,9 +37,9 @@ func load_and_play():
 
 
 func add_player():
-	var lambo_asset = load("res://assets/cars/lambo1.tscn")
+	var car_asset = load(nissan_asset)
 	var player_script = load("res://source_code/player.gd")
-	player = lambo_asset.instantiate()
+	player = car_asset.instantiate()
 	player.set_script(player_script)
 	level.add_child(player)
 	var player_start : Node3D = level.get_node("player_start")
