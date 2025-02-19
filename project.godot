@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="speed_mostsimple"
-run/main_scene="res://assets/Scenes/track.tscn"
+run/main_scene="uid://caqjlvhfyutob"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [display]
