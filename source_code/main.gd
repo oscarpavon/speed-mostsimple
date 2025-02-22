@@ -10,6 +10,12 @@ var nissan_asset = "res://assets/cars/nissan_gtr.tscn"
 
 #tacks
 var track1_asset = "res://assets/Scenes/track.tscn" 
+var track2_asset = "res://assets/tracks/track2.tscn" 
+var track3_asset = "res://assets/tracks/track3.tscn" 
+
+var current_track = track2_asset
+
+var current_car = lambo_asset
 
 func _ready():
 	#get_tree().change_scene_to_file("res://assets/GUI/menu.tscn")
@@ -17,7 +23,7 @@ func _ready():
 
 
 func load_and_play():
-	var track = load(track1_asset)
+	var track = load(current_track)
 	level = track.instantiate()
 	add_child(level)
 	add_player()
@@ -37,7 +43,7 @@ func load_and_play():
 
 
 func add_player():
-	var car_asset = load(nissan_asset)
+	var car_asset = load(current_car)
 	var player_script = load("res://source_code/player.gd")
 	player = car_asset.instantiate()
 	player.set_script(player_script)
