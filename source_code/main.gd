@@ -7,6 +7,7 @@ var player : VehicleBody3D
 #cars
 var lambo_asset = "res://assets/cars/lambo1.tscn"
 var nissan_asset = "res://assets/cars/nissan_gtr.tscn"
+var nissan_qashqai_asset = "res://assets/cars/nissan_qashqai.tscn"
 
 #tacks
 var track1_asset = "res://assets/Scenes/track.tscn" 
@@ -15,11 +16,31 @@ var track3_asset = "res://assets/tracks/track3.tscn"
 
 var current_track = track2_asset
 
-var current_car = lambo_asset
+var current_car = nissan_qashqai_asset
+#var current_car = lambo_asset
+#var current_car = nissan_asset
+
+var main_camera : Camera3D
+
+var wheel_debug : bool = true
 
 func _ready():
 	#get_tree().change_scene_to_file("res://assets/GUI/menu.tscn")
 	load_and_play()
+
+func _process(delta):
+	if Input.is_action_just_released("debug_wheel"):
+		if !wheel_debug:
+			wheel_debug = true
+		else:
+			wheel_debug = false
+
+	if wheel_debug:
+		main_camera.offset = Vector3(2.18,0,0.555)
+	else:
+		main_camera.offset = Vector3(0,6,3)
+
+
 
 
 func load_and_play():
@@ -40,12 +61,15 @@ func load_and_play():
 	new_camera.target = camera_view
 	new_camera.offset = Vector3(0,6,3)
 	add_child(new_camera)
+	new_camera.name = "main_camera"
+	main_camera = new_camera
 
 
 func add_player():
 	var car_asset = load(current_car)
 	var player_script = load("res://source_code/player.gd")
 	player = car_asset.instantiate()
+	player.name = "player"
 	player.set_script(player_script)
 	level.add_child(player)
 	var player_start : Node3D = level.get_node("player_start")
