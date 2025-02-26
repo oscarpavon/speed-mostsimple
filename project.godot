@@ -14,6 +14,10 @@ config/name="speed_mostsimple"
 run/main_scene="uid://caqjlvhfyutob"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
+[autoload]
+
+Global="*res://source_code/global.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
